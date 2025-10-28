@@ -198,13 +198,14 @@
         {
           "background": "#b2bec3",
           "foreground": "#222222",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "<transparent,background>\ue0b2</>",
           "properties": {
             "linux": "\ue712",
             "macos": "\ue711",
             "windows": "\ue70f"
           },
           "style": "diamond",
-          "trailing_diamond": "\ue0b4",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "type": "os"
         },
