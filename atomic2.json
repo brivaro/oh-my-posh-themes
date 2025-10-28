@@ -73,9 +73,9 @@
           "style": "plain",
           "template": "{{ .Path }}",
           "properties": {
-            "path": "https://raw.githubusercontent.com/brivaro/oh-my-posh-themes/refs/heads/main/4.gif"
+            "path": "https://raw.githubusercontent.com/brivaro/oh-my-posh-themes/refs/heads/main/4.png"
           },
-          "type": "elixir"
+          "type": "text"
         }
       ],
       "type": "prompt"
