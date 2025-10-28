@@ -58,9 +58,9 @@
             "style": "roundrock",
             "threshold": 0
           },
-          "style": "diamond",
+          "style": "powerline",
           "template": " \ueba2 {{ .FormattedMs }}\u2800",
-          "trailing_diamond": "\ue0b4",
+          "powerline_symbol": "\ue0b0",
           "type": "executiontime"
         }
       ],
