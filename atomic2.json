@@ -5,12 +5,18 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#0077c2",
-          "foreground": "#ffffff",
-          "leading_diamond": "\u256d\u2500\ue0b6",
+          "background": "#303030",
+          "foreground": "#3C873A",
+          "leading_diamond": "\ue0b4",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": " <#cc3a3a>\ue5fa</> ",
+            "yarn_icon": " <#348cba>\ue6a7</>"
+          },
           "style": "diamond",
-          "template": "\uf120 {{ .Name }} ",
-          "type": "shell"
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "trailing_diamond": "\ue0b6 ",
+          "type": "node"
         },
         {
           "background": "#ef5350",
@@ -72,15 +78,15 @@
         {
           "background": "#303030",
           "foreground": "#3C873A",
-          "leading_diamond": "\ue0b4",
+          "leading_diamond": "\ue0b6",
           "properties": {
             "fetch_package_manager": true,
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
             "yarn_icon": " <#348cba>\ue6a7</>"
           },
           "style": "diamond",
-          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-          "trailing_diamond": "\ue0b6 ",
+          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "trailing_diamond": "\ue0b4 ",
           "type": "node"
         },
         {
