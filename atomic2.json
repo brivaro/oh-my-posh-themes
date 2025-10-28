@@ -75,7 +75,7 @@
           "properties": {
             "path": "https://raw.githubusercontent.com/brivaro/oh-my-posh-themes/refs/heads/main/4.png"
           },
-          "type": "text"
+          "type": "path"
         }
       ],
       "type": "prompt"
