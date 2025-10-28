@@ -1,0 +1,183 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "shell",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#0f172a",
+          "leading_diamond": "\u256d\u2500\ue0b6",
+          "template": " {{ .Name }} "
+        },
+        {
+          "type": "session",
+          "style": "diamond",
+          "foreground": "#a5f3fc",
+          "background": "#1e293b",
+          "powerline_symbol": "\ue0b0",
+          "template": "  {{ .UserName }}@{{ .HostName }} "
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "foreground": "#e0f2fe",
+          "background": "#334155",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "folder_icon": " ",
+            "home_icon": " "
+          },
+          "template": "  {{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "foreground": "#1e293b",
+          "background": "#facc15",
+          "background_templates": [
+            "{{ if .Working.Changed }}#ef4444{{ end }}",
+            "{{ if gt .Ahead 0 }}#fb923c{{ end }}",
+            "{{ if gt .Behind 0 }}#f59e0b{{ end }}",
+            "{{ if and (eq .Ahead 0) (eq .Behind 0) (not .Working.Changed) }}#22c55e{{ end }}"
+          ],
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": " ",
+            "fetch_status": true
+          },
+          "template": " {{ .BranchIcon }}{{ .HEAD }}{{ if .Working.Changed }}  {{ end }}{{ if gt .Ahead 0 }} {{ .Ahead }}{{ end }}{{ if gt .Behind 0 }} {{ .Behind }}{{ end }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#7c3aed",
+          "background_templates": [
+            "{{ if lt .Ms 1000 }}#16a34a{{ end }}",
+            "{{ if and (ge .Ms 1000) (lt .Ms 5000) }}#f59e0b{{ end }}",
+            "{{ if ge .Ms 5000 }}#dc2626{{ end }}"
+          ],
+          "template": " {{ .FormattedMs }}",
+          "trailing_diamond": "\ue0b4"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "node",
+          "style": "diamond",
+          "foreground": "#3C873A",
+          "background": "#1e1e1e",
+          "leading_diamond": "\ue0b6",
+          "template": " {{ .Full }}",
+          "trailing_diamond": "\ue0b4 "
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "foreground": "#FFE873",
+          "background": "#306998",
+          "leading_diamond": "\ue0b6",
+          "template": " {{ .Full }}",
+          "trailing_diamond": "\ue0b4 "
+        },
+        {
+          "type": "java",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#0e8ac8",
+          "leading_diamond": "\ue0b6",
+          "template": " {{ .Full }}",
+          "trailing_diamond": "\ue0b4 "
+        },
+        {
+          "type": "go",
+          "style": "diamond",
+          "foreground": "#00ADD8",
+          "background": "#ffffff",
+          "leading_diamond": "\ue0b6",
+          "template": " {{ .Full }}",
+          "trailing_diamond": "\ue0b4 "
+        },
+        {
+          "type": "docker",
+          "style": "diamond",
+          "foreground": "#2496ED",
+          "background": "#1e293b",
+          "leading_diamond": "\ue0b6",
+          "template": " {{ .Context }}",
+          "trailing_diamond": "\ue0b4 "
+        },
+        {
+          "type": "os",
+          "style": "diamond",
+          "foreground": "#e2e8f0",
+          "background": "#475569",
+          "leading_diamond": "\ue0b6",
+          "template": " {{ .Icon }}",
+          "trailing_diamond": "\ue0b4 "
+        },
+        {
+          "type": "battery",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b2",
+          "invert_powerline": true,
+          "foreground": "#0f172a",
+          "background": "#a3e635",
+          "background_templates": [
+            "{{if eq \"Charging\" .State.String}}#22c55e{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#fde047{{end}}",
+            "{{if eq \"Full\" .State.String}}#84cc16{{end}}"
+          ],
+          "template": " {{ .Icon }}{{ .Percentage }} "
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#0ea5e9",
+          "invert_powerline": true,
+          "leading_diamond": "\ue0b2",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "template": " {{ .CurrentDate | date .Format }}",
+          "trailing_diamond": "\ue0b4"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#38bdf8",
+          "template": "╰─"
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "#a7f3d0",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef4444{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "template": " "
+        }
+      ],
+      "type": "prompt"
+    }
+  ]
+}
