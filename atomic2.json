@@ -71,11 +71,8 @@
       "segments": [
         {
           "style": "plain",
-          "template": "{{ .Path }}",
-          "properties": {
-            "path": "https://raw.githubusercontent.com/brivaro/oh-my-posh-themes/refs/heads/main/4.png"
-          },
-          "type": "path"
+          "template": " ⚔️ ",
+          "type": "text"
         }
       ],
       "type": "prompt"
@@ -267,9 +264,7 @@
         },
         {
           "foreground": "#e0f8ff",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#ef5350{{ end }}"
-          ],
+          "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
           "properties": {
             "always_enabled": true
           },
